@@ -6,7 +6,7 @@ provider "azurerm" {
 resource "azurerm_public_ip" "frontend" {
   name                = "frontend"
   resource_group_name = "project-setup-1"
-  location            = "uk west"
+  location            = "Uk West"
   allocation_method   = "Static"
 
   tags = {
@@ -14,8 +14,8 @@ resource "azurerm_public_ip" "frontend" {
   }
 }
 resource "azurerm_network_interface" "frontend" {
-  name                = "frontend-nic"
-  location            = "uk west"
+  name                = "frontend"
+  location            = "Uk West"
   resource_group_name = "project-setup-1"
 
   ip_configuration {
@@ -27,7 +27,7 @@ resource "azurerm_network_interface" "frontend" {
 
 resource "azurerm_virtual_machine" "frontend" {
   name                  = "frontend-vm"
-  location              = "uk west"
+  location              = "Uk West"
   resource_group_name   = "project-setup-1"
   network_interface_ids = [azurerm_network_interface.frontend.id]
   vm_size               = "Standard_B2s"
